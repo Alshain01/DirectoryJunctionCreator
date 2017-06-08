@@ -70,5 +70,41 @@ namespace KSPDirectoryJunctionCreator.Properties {
                 this["SubsPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point FormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["FormLocation"]));
+            }
+            set {
+                this["FormLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("680, 350")]
+        public global::System.Drawing.Size FormSize {
+            get {
+                return ((global::System.Drawing.Size)(this["FormSize"]));
+            }
+            set {
+                this["FormSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string WindowState {
+            get {
+                return ((string)(this["WindowState"]));
+            }
+            set {
+                this["WindowState"] = value;
+            }
+        }
     }
 }

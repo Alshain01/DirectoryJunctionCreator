@@ -14,7 +14,7 @@ namespace KSPDirectoryJunctionCreator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DirectoryJunctionCreator());
+            Application.Run(new FormDirectoryJunctionCreator());
         }
     }
 }

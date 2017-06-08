@@ -2,12 +2,18 @@
 using System.IO;
 using System.Windows.Forms;
 using Monitor.Core.Utilities;
+using System.Drawing;
 
 namespace KSPDirectoryJunctionCreator
 {
-    public partial class DirectoryJunctionCreator : Form
+    public partial class FormDirectoryJunctionCreator : Form
     {
-        public DirectoryJunctionCreator()
+        const string VABSubFolder = "\\Ships\\VAB";
+        const string SPHSubFolder = "\\Ships\\SPH";
+        const string SubassembliesSubFolder = "\\Subassemblies";
+        const string SavesFolder = "\\saves";
+
+        public FormDirectoryJunctionCreator()
         {
             InitializeComponent();
 
@@ -31,8 +37,17 @@ namespace KSPDirectoryJunctionCreator
                 }
                 Properties.Settings.Default.KSPPath = tempPath;
             }
-
+            
             Properties.Settings.Default.Save();
+        }
+
+        private void FormDirectoryJunctionCreator_Load(object sender, EventArgs e)
+        {
+            Text = String.Format("Directory Junction Creator v{0}\r\n", Application.ProductVersion);
+            InfoBox.AppendText(Text);
+
+            this.DesktopBounds = new Rectangle(Properties.Settings.Default.FormLocation, Properties.Settings.Default.FormSize);
+            this.WindowState = (FormWindowState)Enum.Parse(typeof(FormWindowState), Properties.Settings.Default.WindowState);
         }
 
         private void BrowseTargetPath_Click(object sender, EventArgs e)
@@ -61,20 +76,26 @@ namespace KSPDirectoryJunctionCreator
 
         private void CreateVABLinks_Click(object sender, EventArgs e)
         {
-            DirectoryInfo target = new DirectoryInfo(VABPath.Text);
-            CreateDirectoryJunction(target, "\\Ships\\VAB");
+           OutputTaskCount(CreateDirectoryJunction(new DirectoryInfo(VABPath.Text), VABSubFolder));
         }
 
         private void CreateSPHLinks_Click(object sender, EventArgs e)
         {
-            DirectoryInfo target = new DirectoryInfo(SPHPath.Text);
-            CreateDirectoryJunction(target, "\\Ships\\SPH");
+            OutputTaskCount(CreateDirectoryJunction(new DirectoryInfo(SPHPath.Text), SPHSubFolder));
         }
 
         private void CreateSubsLinks_Click(object sender, EventArgs e)
         {
-            DirectoryInfo target = new DirectoryInfo(SubsPath.Text);
-            CreateDirectoryJunction(target, "\\Subassemblies");
+            OutputTaskCount(CreateDirectoryJunction(new DirectoryInfo(SubsPath.Text), SubassembliesSubFolder));
+        }
+
+        private void LinkAll_Click(object sender, EventArgs e)
+        {
+            int tasksComplete = 0;
+            tasksComplete += CreateDirectoryJunction(new DirectoryInfo(VABPath.Text), VABSubFolder);
+            tasksComplete += CreateDirectoryJunction(new DirectoryInfo(SPHPath.Text), SPHSubFolder);
+            tasksComplete += CreateDirectoryJunction(new DirectoryInfo(SubsPath.Text), SubassembliesSubFolder);
+            OutputTaskCount(tasksComplete);
         }
 
         string GetPath(string startPath, bool allowCreate, string message)
@@ -86,10 +107,10 @@ namespace KSPDirectoryJunctionCreator
             return folderBrowserDialog.SelectedPath;
         }
 
-        private void CreateDirectoryJunction(DirectoryInfo target, string subfolder)
+        private int CreateDirectoryJunction(DirectoryInfo target, string subfolder)
         {
             int tasks = 0;
-            DirectoryInfo link = new DirectoryInfo(TargetPath.Text + "\\saves");
+            DirectoryInfo link = new DirectoryInfo(TargetPath.Text + SavesFolder);
 
             if (!target.Exists)
             {
@@ -105,17 +126,28 @@ namespace KSPDirectoryJunctionCreator
 
                 if (!Directory.Exists(SaveGame.FullName + subfolder))
                 {
-                    InfoBox.AppendText(String.Format("Creating Directory Junction: {0} <<===> {1}\r\n", SaveGame.FullName + subfolder, target.FullName));
+                    InfoBox.AppendText(String.Format("Creating Directory Junction: {0} <<===>> {1}\r\n", SaveGame.FullName + subfolder, target.FullName));
                     JunctionPoint.Create(SaveGame.FullName + subfolder, target.FullName, false);
                     tasks++;
                 }
             }
+            return tasks;
+        }
+
+        private void OutputTaskCount(int tasks)
+        {
             InfoBox.AppendText(String.Format("Completed {0} Tasks\r\n", tasks));
         }
 
-        private void DirectoryJunctionCreator_Load(object sender, EventArgs e)
+        private void FormDirectoryJunctionCreator_FormClosing(object sender, FormClosingEventArgs e)
         {
-            InfoBox.AppendText(String.Format("Directory Junction Creator v{0}\r\n", Application.ProductVersion));
+            Rectangle bounds = this.WindowState != FormWindowState.Normal ? this.RestoreBounds : this.DesktopBounds;
+            Properties.Settings.Default.FormLocation = bounds.Location;
+            Properties.Settings.Default.FormSize = bounds.Size;
+            if(this.WindowState != FormWindowState.Minimized)
+                Properties.Settings.Default.WindowState = Enum.GetName(typeof(FormWindowState), this.WindowState);
+            // persist location ,size and window state of the form on the desktop
+            Properties.Settings.Default.Save();
         }
     }
 }

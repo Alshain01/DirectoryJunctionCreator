@@ -1,6 +1,6 @@
 ﻿namespace KSPDirectoryJunctionCreator
 {
-    partial class DirectoryJunctionCreator
+    partial class FormDirectoryJunctionCreator
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DirectoryJunctionCreator));
-            this.TargetPath = new System.Windows.Forms.TextBox();
-            this.VABPath = new System.Windows.Forms.TextBox();
-            this.SubsPath = new System.Windows.Forms.TextBox();
-            this.SPHPath = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDirectoryJunctionCreator));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,55 +42,12 @@
             this.CreateSubsLinks = new System.Windows.Forms.Button();
             this.BrowseSubsPath = new System.Windows.Forms.Button();
             this.InfoBox = new System.Windows.Forms.TextBox();
+            this.LinkAll = new System.Windows.Forms.Button();
+            this.SPHPath = new System.Windows.Forms.TextBox();
+            this.SubsPath = new System.Windows.Forms.TextBox();
+            this.VABPath = new System.Windows.Forms.TextBox();
+            this.TargetPath = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // TargetPath
-            // 
-            this.TargetPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TargetPath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::KSPDirectoryJunctionCreator.Properties.Settings.Default, "KSPPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.TargetPath.Location = new System.Drawing.Point(15, 25);
-            this.TargetPath.Name = "TargetPath";
-            this.TargetPath.ReadOnly = true;
-            this.TargetPath.Size = new System.Drawing.Size(559, 20);
-            this.TargetPath.TabIndex = 0;
-            this.TargetPath.Text = global::KSPDirectoryJunctionCreator.Properties.Settings.Default.KSPPath;
-            // 
-            // VABPath
-            // 
-            this.VABPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.VABPath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::KSPDirectoryJunctionCreator.Properties.Settings.Default, "VABPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.VABPath.Location = new System.Drawing.Point(12, 75);
-            this.VABPath.Name = "VABPath";
-            this.VABPath.ReadOnly = true;
-            this.VABPath.Size = new System.Drawing.Size(562, 20);
-            this.VABPath.TabIndex = 1;
-            this.VABPath.Text = global::KSPDirectoryJunctionCreator.Properties.Settings.Default.VABPath;
-            // 
-            // SubsPath
-            // 
-            this.SubsPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SubsPath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::KSPDirectoryJunctionCreator.Properties.Settings.Default, "SubsPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.SubsPath.Location = new System.Drawing.Point(12, 153);
-            this.SubsPath.Name = "SubsPath";
-            this.SubsPath.ReadOnly = true;
-            this.SubsPath.Size = new System.Drawing.Size(562, 20);
-            this.SubsPath.TabIndex = 2;
-            this.SubsPath.Text = global::KSPDirectoryJunctionCreator.Properties.Settings.Default.SubsPath;
-            // 
-            // SPHPath
-            // 
-            this.SPHPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SPHPath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::KSPDirectoryJunctionCreator.Properties.Settings.Default, "SPHPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.SPHPath.Location = new System.Drawing.Point(12, 114);
-            this.SPHPath.Name = "SPHPath";
-            this.SPHPath.ReadOnly = true;
-            this.SPHPath.Size = new System.Drawing.Size(562, 20);
-            this.SPHPath.TabIndex = 3;
-            this.SPHPath.Text = global::KSPDirectoryJunctionCreator.Properties.Settings.Default.SPHPath;
             // 
             // label1
             // 
@@ -219,15 +172,78 @@
             this.InfoBox.Name = "InfoBox";
             this.InfoBox.ReadOnly = true;
             this.InfoBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.InfoBox.Size = new System.Drawing.Size(640, 115);
+            this.InfoBox.Size = new System.Drawing.Size(562, 115);
             this.InfoBox.TabIndex = 16;
             this.InfoBox.WordWrap = false;
             // 
-            // DirectoryJunctionCreator
+            // LinkAll
+            // 
+            this.LinkAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LinkAll.Image = ((System.Drawing.Image)(resources.GetObject("LinkAll.Image")));
+            this.LinkAll.Location = new System.Drawing.Point(580, 185);
+            this.LinkAll.Name = "LinkAll";
+            this.LinkAll.Size = new System.Drawing.Size(72, 66);
+            this.LinkAll.TabIndex = 17;
+            this.LinkAll.Text = "Link All";
+            this.LinkAll.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.LinkAll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.LinkAll.UseVisualStyleBackColor = true;
+            this.LinkAll.Click += new System.EventHandler(this.LinkAll_Click);
+            // 
+            // SPHPath
+            // 
+            this.SPHPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SPHPath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::KSPDirectoryJunctionCreator.Properties.Settings.Default, "SPHPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.SPHPath.Location = new System.Drawing.Point(12, 114);
+            this.SPHPath.Name = "SPHPath";
+            this.SPHPath.ReadOnly = true;
+            this.SPHPath.Size = new System.Drawing.Size(562, 20);
+            this.SPHPath.TabIndex = 3;
+            this.SPHPath.Text = global::KSPDirectoryJunctionCreator.Properties.Settings.Default.SPHPath;
+            // 
+            // SubsPath
+            // 
+            this.SubsPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SubsPath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::KSPDirectoryJunctionCreator.Properties.Settings.Default, "SubsPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.SubsPath.Location = new System.Drawing.Point(12, 153);
+            this.SubsPath.Name = "SubsPath";
+            this.SubsPath.ReadOnly = true;
+            this.SubsPath.Size = new System.Drawing.Size(562, 20);
+            this.SubsPath.TabIndex = 2;
+            this.SubsPath.Text = global::KSPDirectoryJunctionCreator.Properties.Settings.Default.SubsPath;
+            // 
+            // VABPath
+            // 
+            this.VABPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.VABPath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::KSPDirectoryJunctionCreator.Properties.Settings.Default, "VABPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.VABPath.Location = new System.Drawing.Point(12, 75);
+            this.VABPath.Name = "VABPath";
+            this.VABPath.ReadOnly = true;
+            this.VABPath.Size = new System.Drawing.Size(562, 20);
+            this.VABPath.TabIndex = 1;
+            this.VABPath.Text = global::KSPDirectoryJunctionCreator.Properties.Settings.Default.VABPath;
+            // 
+            // TargetPath
+            // 
+            this.TargetPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TargetPath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::KSPDirectoryJunctionCreator.Properties.Settings.Default, "KSPPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.TargetPath.Location = new System.Drawing.Point(15, 25);
+            this.TargetPath.Name = "TargetPath";
+            this.TargetPath.ReadOnly = true;
+            this.TargetPath.Size = new System.Drawing.Size(559, 20);
+            this.TargetPath.TabIndex = 0;
+            this.TargetPath.Text = global::KSPDirectoryJunctionCreator.Properties.Settings.Default.KSPPath;
+            // 
+            // FormDirectoryJunctionCreator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 312);
+            this.Controls.Add(this.LinkAll);
             this.Controls.Add(this.InfoBox);
             this.Controls.Add(this.CreateSubsLinks);
             this.Controls.Add(this.BrowseSubsPath);
@@ -246,10 +262,11 @@
             this.Controls.Add(this.TargetPath);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(350, 350);
-            this.Name = "DirectoryJunctionCreator";
+            this.Name = "FormDirectoryJunctionCreator";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "KSP Directory Junction Creator";
-            this.Load += new System.EventHandler(this.DirectoryJunctionCreator_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDirectoryJunctionCreator_FormClosing);
+            this.Load += new System.EventHandler(this.FormDirectoryJunctionCreator_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,6 +291,7 @@
         private System.Windows.Forms.Button CreateSubsLinks;
         private System.Windows.Forms.Button BrowseSubsPath;
         private System.Windows.Forms.TextBox InfoBox;
+        private System.Windows.Forms.Button LinkAll;
     }
 }
 
