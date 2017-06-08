@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDirectoryJunctionCreator));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.SubsPath = new System.Windows.Forms.TextBox();
             this.VABPath = new System.Windows.Forms.TextBox();
             this.TargetPath = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +57,7 @@
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 13);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Kerbal Space Program Path";
             // 
             // label2
@@ -64,7 +66,7 @@
             this.label2.Location = new System.Drawing.Point(12, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(179, 13);
-            this.label2.TabIndex = 6;
+            this.label2.TabIndex = 3;
             this.label2.Text = "Vehicle Assembly Building Craft Path";
             // 
             // label3
@@ -82,7 +84,7 @@
             this.label4.Location = new System.Drawing.Point(13, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 13);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 11;
             this.label4.Text = "Subassemblies Path";
             // 
             // BrowseTargetPath
@@ -92,7 +94,8 @@
             this.BrowseTargetPath.Location = new System.Drawing.Point(580, 18);
             this.BrowseTargetPath.Name = "BrowseTargetPath";
             this.BrowseTargetPath.Size = new System.Drawing.Size(33, 33);
-            this.BrowseTargetPath.TabIndex = 5;
+            this.BrowseTargetPath.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.BrowseTargetPath, "Select KSP Directory");
             this.BrowseTargetPath.UseVisualStyleBackColor = true;
             this.BrowseTargetPath.Click += new System.EventHandler(this.BrowseTargetPath_Click);
             // 
@@ -103,7 +106,8 @@
             this.BrowseVABPath.Location = new System.Drawing.Point(580, 68);
             this.BrowseVABPath.Name = "BrowseVABPath";
             this.BrowseVABPath.Size = new System.Drawing.Size(33, 33);
-            this.BrowseVABPath.TabIndex = 10;
+            this.BrowseVABPath.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.BrowseVABPath, "Select VAB Craft Directory");
             this.BrowseVABPath.UseVisualStyleBackColor = true;
             this.BrowseVABPath.Click += new System.EventHandler(this.BrowseVABPath_Click);
             // 
@@ -114,7 +118,8 @@
             this.CreateVABLinks.Location = new System.Drawing.Point(619, 68);
             this.CreateVABLinks.Name = "CreateVABLinks";
             this.CreateVABLinks.Size = new System.Drawing.Size(33, 33);
-            this.CreateVABLinks.TabIndex = 11;
+            this.CreateVABLinks.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.CreateVABLinks, "Create VAB Junctions");
             this.CreateVABLinks.UseVisualStyleBackColor = true;
             this.CreateVABLinks.Click += new System.EventHandler(this.CreateVABLinks_Click);
             // 
@@ -125,7 +130,8 @@
             this.CreateSPHLinks.Location = new System.Drawing.Point(619, 107);
             this.CreateSPHLinks.Name = "CreateSPHLinks";
             this.CreateSPHLinks.Size = new System.Drawing.Size(33, 33);
-            this.CreateSPHLinks.TabIndex = 13;
+            this.CreateSPHLinks.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.CreateSPHLinks, "Create SPH Junctions");
             this.CreateSPHLinks.UseVisualStyleBackColor = true;
             this.CreateSPHLinks.Click += new System.EventHandler(this.CreateSPHLinks_Click);
             // 
@@ -136,7 +142,8 @@
             this.BrowseSPHPath.Location = new System.Drawing.Point(580, 107);
             this.BrowseSPHPath.Name = "BrowseSPHPath";
             this.BrowseSPHPath.Size = new System.Drawing.Size(33, 33);
-            this.BrowseSPHPath.TabIndex = 12;
+            this.BrowseSPHPath.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.BrowseSPHPath, "Select SPH Craft Directory");
             this.BrowseSPHPath.UseVisualStyleBackColor = true;
             this.BrowseSPHPath.Click += new System.EventHandler(this.BrowseSPHPath_Click);
             // 
@@ -147,7 +154,8 @@
             this.CreateSubsLinks.Location = new System.Drawing.Point(619, 146);
             this.CreateSubsLinks.Name = "CreateSubsLinks";
             this.CreateSubsLinks.Size = new System.Drawing.Size(33, 33);
-            this.CreateSubsLinks.TabIndex = 15;
+            this.CreateSubsLinks.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.CreateSubsLinks, "Create Subassembly Junctions");
             this.CreateSubsLinks.UseVisualStyleBackColor = true;
             this.CreateSubsLinks.Click += new System.EventHandler(this.CreateSubsLinks_Click);
             // 
@@ -158,7 +166,8 @@
             this.BrowseSubsPath.Location = new System.Drawing.Point(580, 146);
             this.BrowseSubsPath.Name = "BrowseSubsPath";
             this.BrowseSubsPath.Size = new System.Drawing.Size(33, 33);
-            this.BrowseSubsPath.TabIndex = 14;
+            this.BrowseSubsPath.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.BrowseSubsPath, "Select Subassembly Directory");
             this.BrowseSubsPath.UseVisualStyleBackColor = true;
             this.BrowseSubsPath.Click += new System.EventHandler(this.BrowseSubsPath_Click);
             // 
@@ -173,7 +182,8 @@
             this.InfoBox.ReadOnly = true;
             this.InfoBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.InfoBox.Size = new System.Drawing.Size(562, 115);
-            this.InfoBox.TabIndex = 16;
+            this.InfoBox.TabIndex = 15;
+            this.InfoBox.TabStop = false;
             this.InfoBox.WordWrap = false;
             // 
             // LinkAll
@@ -183,10 +193,11 @@
             this.LinkAll.Location = new System.Drawing.Point(580, 185);
             this.LinkAll.Name = "LinkAll";
             this.LinkAll.Size = new System.Drawing.Size(72, 66);
-            this.LinkAll.TabIndex = 17;
-            this.LinkAll.Text = "Link All";
+            this.LinkAll.TabIndex = 16;
+            this.LinkAll.Text = "Create All";
             this.LinkAll.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.LinkAll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.LinkAll, "Create All Junctions");
             this.LinkAll.UseVisualStyleBackColor = true;
             this.LinkAll.Click += new System.EventHandler(this.LinkAll_Click);
             // 
@@ -199,8 +210,10 @@
             this.SPHPath.Name = "SPHPath";
             this.SPHPath.ReadOnly = true;
             this.SPHPath.Size = new System.Drawing.Size(562, 20);
-            this.SPHPath.TabIndex = 3;
+            this.SPHPath.TabIndex = 8;
+            this.SPHPath.TabStop = false;
             this.SPHPath.Text = global::KSPDirectoryJunctionCreator.Properties.Settings.Default.SPHPath;
+            this.toolTip1.SetToolTip(this.SPHPath, "The directory to store craft files for the SPH");
             // 
             // SubsPath
             // 
@@ -211,8 +224,10 @@
             this.SubsPath.Name = "SubsPath";
             this.SubsPath.ReadOnly = true;
             this.SubsPath.Size = new System.Drawing.Size(562, 20);
-            this.SubsPath.TabIndex = 2;
+            this.SubsPath.TabIndex = 12;
+            this.SubsPath.TabStop = false;
             this.SubsPath.Text = global::KSPDirectoryJunctionCreator.Properties.Settings.Default.SubsPath;
+            this.toolTip1.SetToolTip(this.SubsPath, "The directory to store subassembly files");
             // 
             // VABPath
             // 
@@ -223,8 +238,10 @@
             this.VABPath.Name = "VABPath";
             this.VABPath.ReadOnly = true;
             this.VABPath.Size = new System.Drawing.Size(562, 20);
-            this.VABPath.TabIndex = 1;
+            this.VABPath.TabIndex = 4;
+            this.VABPath.TabStop = false;
             this.VABPath.Text = global::KSPDirectoryJunctionCreator.Properties.Settings.Default.VABPath;
+            this.toolTip1.SetToolTip(this.VABPath, "The directory to store craft files for the VAB");
             // 
             // TargetPath
             // 
@@ -235,8 +252,10 @@
             this.TargetPath.Name = "TargetPath";
             this.TargetPath.ReadOnly = true;
             this.TargetPath.Size = new System.Drawing.Size(559, 20);
-            this.TargetPath.TabIndex = 0;
+            this.TargetPath.TabIndex = 1;
+            this.TargetPath.TabStop = false;
             this.TargetPath.Text = global::KSPDirectoryJunctionCreator.Properties.Settings.Default.KSPPath;
+            this.toolTip1.SetToolTip(this.TargetPath, "The Installation Location of Kerbal Space Program");
             // 
             // FormDirectoryJunctionCreator
             // 
@@ -292,6 +311,7 @@
         private System.Windows.Forms.Button BrowseSubsPath;
         private System.Windows.Forms.TextBox InfoBox;
         private System.Windows.Forms.Button LinkAll;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
