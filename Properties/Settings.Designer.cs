@@ -22,5 +22,53 @@ namespace KSPDirectoryJunctionCreator.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string KSPPath {
+            get {
+                return ((string)(this["KSPPath"]));
+            }
+            set {
+                this["KSPPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string VABPath {
+            get {
+                return ((string)(this["VABPath"]));
+            }
+            set {
+                this["VABPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SPHPath {
+            get {
+                return ((string)(this["SPHPath"]));
+            }
+            set {
+                this["SPHPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SubsPath {
+            get {
+                return ((string)(this["SubsPath"]));
+            }
+            set {
+                this["SubsPath"] = value;
+            }
+        }
     }
 }
